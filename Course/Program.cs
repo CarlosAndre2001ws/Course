@@ -59,24 +59,48 @@ namespace Course
             */
 
 
-            string frase = Console.ReadLine();
+            //string frase = Console.ReadLine();
 
-            string x = Console.ReadLine();
-            string y = Console.ReadLine();
-            string z = Console.ReadLine();
+            //string x = Console.ReadLine();
+            //string y = Console.ReadLine();
+            //string z = Console.ReadLine();
 
 
-            string[] vect = Console.ReadLine().Split(' ');
+            //string[] vect = Console.ReadLine().Split(' ');
 
-            string a = vect[0];
-            string b = vect[1];
-            string c = vect[2];
+            //string a = vect[0];
+            //string b = vect[1];
+            //string c = vect[2];
 
-            Console.WriteLine(frase);
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            Console.WriteLine(z);
-            Console.WriteLine(a + " " + b + " " + c);
+            //Console.WriteLine(frase);
+            //Console.WriteLine(x);
+            //Console.WriteLine(y);
+            //Console.WriteLine(z);
+            //Console.WriteLine(a + " " + b + " " + c);
+
+            int n1 = int.Parse(Console.ReadLine());
+            char ch = char.Parse(Console.ReadLine());
+            double n2 = double.Parse(Console.ReadLine());
+
+            string[] info = Console.ReadLine().Split(' ');
+
+            string nome = info[0];
+            char sexo = char.Parse(info[1]);
+            int idade = int.Parse(info[2]);
+            double altura = double.Parse(info[3]);
+
+
+            Console.WriteLine("Você digitou:");
+
+
+            Console.WriteLine(n1);
+            Console.WriteLine(ch);
+            Console.WriteLine(n2);
+
+            Console.WriteLine(nome);
+            Console.WriteLine(sexo);
+            Console.WriteLine(idade);
+            Console.WriteLine(altura);
         }
     }
 }
