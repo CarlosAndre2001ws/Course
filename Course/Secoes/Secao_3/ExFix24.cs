@@ -1,6 +1,6 @@
-﻿namespace Course.Secao_3;
+﻿namespace Course.Secoes.Secao_3;
 
-public class Ex_Fix_24
+public static class ExFix24
 {
     public static void Run()
     {
