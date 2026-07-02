@@ -16,8 +16,9 @@ public class FileReaderSecoes
     {
         var root = PathHelper.FindSecoesRoot();
         var dir = new DirectoryInfo(root);
-        var matches = dir.GetDirectories("Secao_*", SearchOption.TopDirectoryOnly);
-        return matches.Select(d => new SectionDescriptor(d.Name, d));
+        var secoes = dir.GetDirectories("Secao_*", SearchOption.TopDirectoryOnly);
+        var exerciciosMatches = dir.GetDirectories("Exercicios*", SearchOption.TopDirectoryOnly);
+        return secoes.Concat(exerciciosMatches).Select(f => new SectionDescriptor(f.Name, f));
     }
 
     // Returns all .cs files in the given section as exercise descriptors.
