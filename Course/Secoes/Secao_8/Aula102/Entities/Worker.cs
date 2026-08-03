@@ -2,14 +2,22 @@
 
 namespace Course.Secoes.Secao_8.Aula102.Entities;
 
-public class Worker(string name, string department, string level, double baseSalary)
+public class Worker
 {
-    public string Name {  get; set; } = name;
-    public WorkerLevel Level {  get; set; } = Enum.Parse<WorkerLevel>(level);
-    public double BaseSalary {  get; set; } = baseSalary;
-    private List<HourContract> Contracts {  get; set; } = [];
-    public Department Department {  get; set; } = new(department);
-
+    public string Name {  get; set; }
+    public WorkerLevel Level {  get; set; }
+    public double BaseSalary {  get; set; }
+    private List<HourContract> Contracts {  get; set; }
+    public Department Department {  get; set; }
+    
+    public Worker(string name, Department department, WorkerLevel level, double baseSalary)
+    {
+        Name = name;
+        Department = department;
+        Level = level;
+        BaseSalary = baseSalary;
+    }
+    
     public void AddContract(HourContract contract)
     {
         Contracts.Add(contract);
