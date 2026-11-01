@@ -8,7 +8,6 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            // ExFix24.Run();
             Window.newWindow();
         }
     }

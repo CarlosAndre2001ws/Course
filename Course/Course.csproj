@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Secoes\Secao_8\Aula111\Entities\" />
+  </ItemGroup>
+
 </Project>
