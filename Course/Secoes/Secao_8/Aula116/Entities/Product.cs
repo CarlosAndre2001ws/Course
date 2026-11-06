@@ -13,8 +13,8 @@ public class Product
         Price = price;
     }
     
-    public string PriceTag()
+    public virtual string PriceTag()
     {
-        return $"Price: $ {Price.ToString("F2", CultureInfo.InvariantCulture)}";
+        return Price.ToString("F2", CultureInfo.InvariantCulture);
     }
 }
