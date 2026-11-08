@@ -1,6 +1,6 @@
 ﻿namespace Course.Secoes.Secao_8.Aula109.Entities;
 
-public class Account
+public abstract class Account
 {
     public int Number { get; private set; }
     public string Holder { get; private set; }
@@ -13,7 +13,7 @@ public class Account
         Balance = balance;
     }
 
-    public void Withdraw(double amount)
+    public virtual void Withdraw(double amount)
     {
         Balance -= amount + 50.0;
     }

@@ -9,6 +9,11 @@ public class SavingsAccount : Account
     {
         InterestRate = interestRate;
     }
+    
+    public override void Withdraw(double amount)
+    {
+        Balance -= amount + 7.0;
+    }
 
     public void UpdateBalance()
     {

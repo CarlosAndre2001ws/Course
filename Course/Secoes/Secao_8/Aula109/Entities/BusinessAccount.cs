@@ -9,6 +9,11 @@ public class BusinessAccount : Account
         LoanLimit = loanLimit;
     }
 
+    public override void Withdraw(double amount)
+    {
+        Balance -= amount + 5.0;
+    }
+    
     public void Loan(double amount)
     {
         if (amount <= LoanLimit)

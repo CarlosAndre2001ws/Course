@@ -1,4 +1,5 @@
-﻿using Course.Secoes.Secao_8.Aula109.Entities;
+﻿using System.Globalization;
+using Course.Secoes.Secao_8.Aula109.Entities;
 
 namespace Course.Secoes.Secao_8.Aula109;
 
@@ -6,33 +7,30 @@ public class Program
 {
     public static void Run()
     {
-        Account acc = new Account(1001, "Alex", 0.0);
-        BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.0);
+        List<Account> list = new List<Account>();
         
-        // UPCASTING
+        list.Add(new SavingsAccount(1001, "Alex", 500.0, 0.01));
+        list.Add(new BusinessAccount(1002, "Maria", 500.0, 400.0));
+        list.Add(new SavingsAccount(1003, "Bob", 500.0, 0.01));
+        list.Add(new BusinessAccount(1004, "Anna", 500.0, 500.0));
 
-        Account acc1 = bacc;
-        Account acc2 = new BusinessAccount(1003, "Bob", 0.0, 200.0);
-        Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
-        
-        // DOWNCASTING
+        double sum = 0.0;
 
-        BusinessAccount acc4 = (BusinessAccount) acc2;
-        acc4.Loan(200);
-
-        // BusinessAccount acc5 = (BusinessAccount) acc3;
-        if (acc3 is BusinessAccount)
+        foreach (Account account in list)
         {
-            BusinessAccount acc5 =  (BusinessAccount)acc3;
-            acc5.Loan(200);
-            Console.WriteLine("loan!");
+            sum += account.Balance;
         }
 
-        if (acc3 is SavingsAccount)
+        Console.WriteLine("Total balance: " + sum.ToString("F2", CultureInfo.InvariantCulture));
+
+        foreach (Account account in list)
         {
-            SavingsAccount acc5 = (SavingsAccount)acc3;
-            acc5.UpdateBalance();
-            Console.WriteLine("Update!");
+            account.Withdraw(10.0);
+        }
+
+        foreach (Account account in list)
+        {
+            Console.WriteLine("Updated balance " + account.Number + " - " + account.Balance.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
